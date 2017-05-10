@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.yuer.redis"/>
+
+    <bean id="redissonConfig" class="com.yuer.redis.conf.RedissonConfig">
+        <property name="hostName" value="127.0.0.1"/>
+        <property name="port" value="6379"/>
+        <property name="timeout" value="60000"/>
+        <property name="password" value=""/>
+        <property name="database" value="0"/>
+    </bean>
+    <!--<bean id="redissonFactoryBean" class="com.yuer.redis.factory.RedissonFactoryBean" init-method="getObject"/>-->
+    <!--<bean id="redissonTemplate" class="com.yuer.redis.factory.RedissonTemplate"/>-->
+
+</beans>
